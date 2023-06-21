@@ -2,7 +2,7 @@ import React from 'react'
 
 function NewMeetup() {
   return (
-    <div>NewMeetup</div>
+    <div> hello NewMeetup</div>
   )
 }
 

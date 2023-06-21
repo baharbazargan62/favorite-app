@@ -9,9 +9,9 @@ function App() {
     <div>
       <MainNavigationBar/>
       <Routes>
-        <Route path="/" element={<AllMeetups/>} />
-        <Route path="/favorites" element={<Favorites/>} />
+        <Route path="/" element={<AllMeetups/>} />     
         <Route path="/new-meetings" element={<NewMeetup/>} />
+        <Route path="/favorites" element={<Favorites/>} />
       </Routes>
     </div>
   );

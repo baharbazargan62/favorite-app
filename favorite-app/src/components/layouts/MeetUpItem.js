@@ -6,7 +6,7 @@ function MeetUpItem({meetup}) {
     <li className={classes.item}>
       <Card>
      <div className={classes.image}>
-       <img src={meetup.img} alt={meetup.tittle}></img>
+       <img src={meetup.image} alt={meetup.tittle}></img>
      </div>
      <div className={classes.content}>
         <h3>{meetup.tittle}</h3>

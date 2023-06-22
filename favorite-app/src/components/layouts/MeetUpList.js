@@ -1,15 +1,15 @@
 import React from 'react'
-
+import MeetUpItem from "./MeetUpItem"
+import classes from "./MeetUPList.module.css"
 function MeetUpList({meetups}) {
   return (
-    <div>
+    <ul className={classes.list}>
+        {meetups.map((meetup)=> <MeetUpItem meetup={meetup}/>)}
 
-<ul>
-    {meetups.map((meetup)=>{
-      return <li></li>
-    })}
-   </ul>
-    </div>
+      </ul>
+   
+  
+ 
   )
 }
 

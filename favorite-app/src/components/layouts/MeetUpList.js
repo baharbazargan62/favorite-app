@@ -4,7 +4,7 @@ import classes from "./MeetUPList.module.css"
 function MeetUpList({meetups}) {
   return (
     <ul className={classes.list}>
-        {meetups.map((meetup)=> <MeetUpItem meetup={meetup}/>)}
+        {meetups.map((meetup)=> <MeetUpItem  key={meetup.key}meetup={meetup}/>)}
 
       </ul>
    

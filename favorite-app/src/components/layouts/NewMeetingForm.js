@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import Card from './Card'
 import classes from "./NewMeetingForm.module.css"
-function NewMeetingForm() {
+function NewMeetingForm(props) {
  const tittleInputRef=useRef();
  const imageInputRef=useRef();
  const addressInputRef=useRef();
@@ -19,6 +19,7 @@ function NewMeetingForm() {
         address:enteredAddress,
         description:enteredDescription
     }
+    props.onAddMeetup(meetup);
     }
   return (
     <Card>

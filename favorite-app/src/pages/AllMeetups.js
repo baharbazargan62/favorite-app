@@ -1,10 +1,11 @@
 import React from 'react';
 import MeetUpList from "../components/layouts/MeetUpList"
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 function AllMeetups() {
 const [loading,setLoading]=useState(true)
-const [meetups,setMeetup]=useState([])
+const [meetups,setMeetup]=useState([]);
+useEffect(()=>{
   fetch(
     "https://favorite-app-a4658-default-rtdb.firebaseio.com/meetups.json"
   ).then((response)=>{
@@ -12,7 +13,8 @@ const [meetups,setMeetup]=useState([])
     }).then((data)=>{
       setLoading(false)
       setMeetup(data)
-    }); 
+    })},[])
+   
   if (loading){
         return(
           <section>

@@ -6,13 +6,23 @@ function AllMeetups() {
 const [loading,setLoading]=useState(true)
 const [meetups,setMeetup]=useState([]);
 useEffect(()=>{
+  // setLoading(true);it is  cleaner to put it 
   fetch(
     "https://favorite-app-a4658-default-rtdb.firebaseio.com/meetups.json"
   ).then((response)=>{
      return response.json
     }).then((data)=>{
+      for (const key in data ){
+            const meetup={
+              id:key,
+              ...data[key]
+            }
+            meetups.push(meetup)
+        }
       setLoading(false)
-      setMeetup(data)
+      setMeetup((meetups)=>{
+        
+      })
     })},[])
    
   if (loading){

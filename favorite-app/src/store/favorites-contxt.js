@@ -3,11 +3,14 @@ import React from 'react'
 // createcontext is a object and argument can be anything in yhis case we can use obj
 const FavoritesContext=createContext({
     favorites:[],
-    totalFavorites : 0
+    totalFavorites : 0,
+    addFavorite: (favoriteMeetup)=>{},
+    removeFavorite :(meetUpId)=>{},
+    itemIsFavorite :(meetUpId)  =>{}
 });
 
 
-function FavoritesContextProvider(props) {
+export function FavoritesContextProvider(props) {
 const [useFavorites,setUserFavorites]=useState([]);
   function addFavoritesHandler(favoriteMeetup){
      setUserFavorites((previous)=> previous.concat(favoriteMeetup))
@@ -22,7 +25,10 @@ return previous.filter((meetup)=> meetup.id !== meetupId)
   }
 const context={
     favorites:useFavorites,
-    totalFavorites :useFavorites.length
+    totalFavorites :useFavorites.length,
+    addFavorite : addFavoritesHandler,
+    removeFavorite : removeFavoriteHandler,
+    itemIsFavorite : itemIsFavorite
 };
 
 
@@ -33,4 +39,4 @@ const context={
 
 }
 
-export default FavoritesContextProvider;
+export default FavoritesContext;

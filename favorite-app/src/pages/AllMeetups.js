@@ -23,7 +23,8 @@ useEffect(()=>{
       setMeetup((meetups)=>{
         
       })
-    })},[])
+    })},[meetups])
+  
    
   if (loading){
         return(
